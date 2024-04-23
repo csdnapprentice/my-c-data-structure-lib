@@ -51,3 +51,23 @@ void myStackInit(struct  Stack *s, int maxSize){
     s->top = 0;
     s->maxSize = maxSize;
 }
+/*
+ * Written by HengYuan Hu on April 23, 2024.
+ * This function can change the maximum size of a stack, making it very simple to implement certain operations.
+ * This function's time complexity depends on the size of the stack content.
+ * So it's time complexity is O(n), n is the size of the stack content.
+ */
+int myStackChangeSize(struct Stack *s, int maxSize){
+    if(maxSize < (s->top)){ //Cannot change Stack Max Size because this operation will lose data.
+        return 0;
+    }
+    void ** temp = (void **)malloc(sizeof(void *)*maxSize);
+    if(s->top != 0){
+        for(int i = 0; i < s->top; i++){
+            temp[i] = s->item[i];
+        }
+    }
+    free(s->item);
+    s->item = temp;
+    return 1;
+}
