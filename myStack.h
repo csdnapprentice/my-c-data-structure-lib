@@ -11,4 +11,5 @@ void myStackPush(struct Stack *s, void *i);
 void myStackClear(struct Stack *s);
 void myStackInit(struct Stack *s, int maxSize);
 int myStackChangeSize(struct Stack *s, int maxSize);
+int myStackLength(struct Stack *s);
 #endif //STACK_MYSTACK_H

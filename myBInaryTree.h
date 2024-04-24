@@ -1,0 +1,8 @@
+//
+// Created by HengYuan Hu on 24-4-24.
+//
+
+#ifndef LEETCODE_MYBINARYTREE_H
+#define LEETCODE_MYBINARYTREE_H
+
+#endif //LEETCODE_MYBINARYTREE_H

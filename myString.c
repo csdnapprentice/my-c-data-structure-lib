@@ -18,7 +18,7 @@
  */
 char * myStringCatch(const char *s1, const char *s2, int *returnSize){
     int length1 = 0;
-    while(s1[length1]!='\0'){
+    while (s1[length1] != '\0') {
         length1++;
     }
     int length2 = 0;
@@ -142,4 +142,50 @@ char** summaryRanges(const int* nums, int numsSize, int* returnSize) {
     }
     *returnSize = count;
     return ans;
+}
+/*
+ * Written by HengYuan Hu on April 24, 2024.
+ * This function copies the second string to the first string.
+ *
+ */
+char *myStringCopy(char *s){
+    int i = 0;
+    while(s[i]!='\0'){
+        i++;
+    }
+    char *ans = (char *)malloc(sizeof(char)*(i+1));
+    i = 0;
+    for(; s[i]!='\0'; i++){
+        ans[i] = s[i];
+    }
+    ans[i] = '\0';
+    return ans;
+}
+/*
+ * Written by HengYuan Hu on April 24, 2024.
+ * This function will find the character after a specified point, then cut the characters after that point.
+ * The time complexity depends on the length of your characters. It is O(n).
+ */
+void myStringRemoveSubSequence(char *s, char *c){
+    int length_s = 0;
+    while(s[length_s]!='\0'){
+        length_s++;
+    }
+    int length_c = 0;
+    while(c[length_c] != '\0'){
+        length_c++;
+    }
+    for(int i=length_s-1; i>=0; i--){
+        int flag = 1;
+        for(int j = 0; j + length_c - 1 < length_s && j<length_c; j++){
+            if(c[j] != s[j+i]){
+                flag = 0;
+                break;
+            }
+        }
+        if(flag){
+            s[i] = '\0';
+            break;
+        }
+    }
 }
