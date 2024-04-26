@@ -67,6 +67,7 @@ char * intToChar(int num, int *returnSize){
         ans = (char *)malloc(sizeof(char)*2);
         ans[0] = '0';
         ans[1] = '\0';
+        *returnSize = 1;
         return ans;
     }else{
         ans = (char *)malloc(sizeof(char)*(length+2));
