@@ -1,7 +1,3 @@
-//
-// Created by litianyi on 24-4-25.
-//
-
 #include "itertools.h"
 #include <stdlib.h>
 #include "myStack.h"

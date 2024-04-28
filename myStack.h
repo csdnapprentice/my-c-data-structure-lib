@@ -1,6 +1,5 @@
 #ifndef STACK_MYSTACK_H
 #define STACK_MYSTACK_H
-#define MAX_STACK 20
 struct Stack{
     void ** item;
     int top;

@@ -1,7 +1,3 @@
-//
-// Created by litianyi on 24-4-25.
-//
-
 #ifndef LEETCODE_ITERTOOLS_H
 #define LEETCODE_ITERTOOLS_H
 int myComputeCombinationNumber(int maxSize, int size);

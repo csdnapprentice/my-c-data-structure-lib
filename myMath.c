@@ -1,7 +1,3 @@
-//
-// Created by litianyi on 24-4-26.
-//
-
 #include "myMath.h"
 #include <stdlib.h>
 /*
@@ -32,4 +28,18 @@ int* positiveBigNumberAdd(int *arr1, int *arr2, int arr1Size, int arr2Size, int 
         *returnSize = size1;
     }
     return ans;
+}
+/*
+ * Written by HengYuan Hu on April 28, 2024.
+ * This function can effective to obtain the sqrt root of a number.
+ */
+double mySqrt(double x){
+    int count = 0;
+    double y=1;
+    while(count!=20)
+    {
+        y=(y+x/y)*0.5;
+        count++;
+    }
+    return y;
 }
