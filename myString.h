@@ -6,4 +6,5 @@ char * intToChar(int num, int *returnSize);
 char** summaryRanges(const int* nums, int numsSize, int* returnSize);
 char *myStringCopy(char *s);
 void myStringRemoveSubSequence(char *s, char *c);
+int myStringLength(char *s);
 #endif //STRING_MYSTRING_H

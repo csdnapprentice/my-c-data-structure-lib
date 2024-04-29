@@ -1,5 +1,4 @@
 #include "myString.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 /*
@@ -67,7 +66,9 @@ char * intToChar(int num, int *returnSize){
         ans = (char *)malloc(sizeof(char)*2);
         ans[0] = '0';
         ans[1] = '\0';
-        *returnSize = 1;
+        if(returnSize!=NULL) {
+            *returnSize = 1;
+        }
         return ans;
     }else{
         ans = (char *)malloc(sizeof(char)*(length+2));
@@ -189,4 +190,16 @@ void myStringRemoveSubSequence(char *s, char *c){
             break;
         }
     }
+}
+/*
+ * Written by HengYuan Hu on April 28, 2024.
+ * This function detects the length of the string.
+ * The time complexity is O(n), where n is the length of the string.
+ */
+int myStringLength(char *s){
+    int length = 0;
+    while(s[length]!='\0'){
+        length++;
+    }
+    return length;
 }
