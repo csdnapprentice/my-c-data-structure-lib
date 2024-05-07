@@ -7,6 +7,6 @@ struct Array{
 };
 int arrayLength(int size, int type_size);
 int initArray(struct Array *a, int maxSize);
-int insertItem(struct Array *a, int index, void *element);
-void * deleteItem(struct Array *a, int index);
+int insertItem(struct Array *a, int index, void *element, int elementSize);
+int deleteItem(struct Array *a, int index);
 #endif //ARRAY_MYARRAY_H

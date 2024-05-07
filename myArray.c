@@ -1,5 +1,6 @@
 #include "myArray.h"
 #include <stdlib.h>
+#include <string.h>
 /*
  * Written by HengYuan HU on the eighteenth of April 2024.
  * this function can obtain an array's length. Sometimes will be useful.
@@ -31,9 +32,47 @@ int initArray(struct Array *a, int maxSize){
     }
     return 1;
 }
-int insertItem(struct Array *a, int index, void* element){
-
+/*
+/* Written by HengYuan Hu on May 2, 2024.
+ * This function inserts an element into the array.
+ * If the index is greater than the current maximum index of the array,
+ * the element will be inserted at the tail of the array.
+ * the time complexity is O(n), that n is the length of the array.
+ */
+int insertItem(struct Array *a, int index, void* element, int elementSize){
+    if(index<0) {
+        index = 0;
+    }
+    if(a->length < a->maxLength) {
+        if(index < a->length) {
+            for(int i=a->length; i>index; i--) {
+                a->item[i] = a->item[i-1];
+            }
+            void * a_element = (void *)malloc(elementSize);
+            memcpy(a_element, element, elementSize);
+            a->item[index] = a_element;
+        }else {
+            void * a_element = (void *)malloc(elementSize);
+            memcpy(a_element, element, elementSize);
+            a->item[a->length] = a_element;
+        }
+        a->length++;
+        return 1;
+    }
+    return 0;
 }
-void *deleteItem(struct Array *a, int index){
-
+int deleteItem(struct Array *a, int index){
+    if(index >= a->length|| index<0) {
+        return 0;
+    }
+    if(a->length>=1) {
+        free(a->item[index]);
+        for(int i=index; i<a->length-1; i++) {
+            a->item[i] = a->item[i+1];
+        }
+        a->item[a->length-1] = NULL;
+        a->length--;
+        return 1;
+    }
+    return 0;
 }
