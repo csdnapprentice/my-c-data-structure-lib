@@ -15,7 +15,7 @@ void *myDeQueue(struct Queue *q) {
 /*
  *Written by HengYuan Hu on May 6, 2024.
  */
-int myEnQueue(struct Queue *q, void *i, int elementSize, int copy) {
+int myEnQueue(struct Queue *q, void *i, size_t elementSize, int copy) {
     if(myQueueFull(q)) {
         return 0;
     }
@@ -91,13 +91,13 @@ int myQueueChangeSize(struct Queue *q, int maxSize) {
 /*
  *Written by HengYuan Hu on May 6, 2024.
  */
-int myQueueLength(struct Queue *q) {
+int myQueueLength(struct Queue const *q) {
     return (q->rear - q->front + q->maxSize)%q->maxSize;
 }
 /*
  *Written by HengYuan Hu on May 6, 2024.
  */
-int myQueueEmpty(struct Queue *q) {
+int myQueueEmpty(struct Queue const* q) {
     if(q->rear == q->front) {
         return 1;
     }
@@ -106,7 +106,7 @@ int myQueueEmpty(struct Queue *q) {
 /*
  *Written by HengYuan Hu on May 6, 2024.
  */
-int myQueueFull(struct Queue *q) {
+int myQueueFull(struct Queue const* q) {
     if((q->rear+1)%q->maxSize == q->front) {
         return 1;
     }

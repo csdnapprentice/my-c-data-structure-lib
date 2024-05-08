@@ -8,7 +8,7 @@
  * This function is used to traverse a binary tree and return a sequence representing the structure of the tree.
  * The time complexity depends on the number of nodes. It is O(n), where n is the number of nodes.
  */
-void* myInOrderTraversal(struct TreeNode* root, int* returnSize, int elementSize){
+void* myInOrderTraversal(struct TreeNode const * root, int* returnSize, size_t elementSize){
     if(root!=NULL){
         void* left = myInOrderTraversal(root->left, returnSize, elementSize);
         int leftLength = *returnSize;
@@ -44,7 +44,7 @@ void* myInOrderTraversal(struct TreeNode* root, int* returnSize, int elementSize
  * This function is used to traverse a binary tree and return a sequence representing the structure of the tree.
  * The time complexity depends on the number of nodes. It is O(n), where n is the number of nodes.
  */
-void* myPreOrderTraversal(struct TreeNode* root, int* returnSize, int elementSize){
+void* myPreOrderTraversal(struct TreeNode* root, int* returnSize, size_t elementSize){
     if(root!=NULL){
         void* left = myInOrderTraversal(root->left, returnSize, elementSize);
         int leftLength = *returnSize;
@@ -78,7 +78,7 @@ void* myPreOrderTraversal(struct TreeNode* root, int* returnSize, int elementSiz
  * This function is used to traverse a binary tree and return a sequence representing the structure of the tree.
  * The time complexity depends on the number of nodes. It is O(n), where n is the number of nodes.
  */
-void* myPostOrderTraversal(struct TreeNode* root, int* returnSize, int elementSize){
+void* myPostOrderTraversal(struct TreeNode* root, int* returnSize, size_t elementSize){
     if(root!=NULL){
         void* left = myInOrderTraversal(root->left, returnSize, elementSize);
         int leftLength = *returnSize;
@@ -111,7 +111,7 @@ void* myPostOrderTraversal(struct TreeNode* root, int* returnSize, int elementSi
  * This function create a binary tree by an array, the array represent the binary tree's sequence traversal sequence
  * This function can let you init a binary tree very easy.
  */
-int initBinaryTreeByArray(struct TreeNode* root, struct Array *array, int elementSize){
+int initBinaryTreeByArray(struct TreeNode* root, struct Array const *array, size_t elementSize){
     root->val = (void *)malloc(elementSize);
     if(root->val == NULL) {
         return 0;

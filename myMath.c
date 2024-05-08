@@ -6,7 +6,7 @@
  * The time complexity depends on the length of the numbers.
  * It is O(n), where n is the length of the numbers.
  */
-int* positiveBigNumberAdd(int *arr1, int *arr2, int arr1Size, int arr2Size, int radix, int *returnSize){
+int* positiveBigNumberAdd(int const *arr1, int const* arr2, int arr1Size, int arr2Size, int radix, int *returnSize){
     int size1 = arr1Size>arr2Size?arr1Size:arr2Size;
     int size2 = arr1Size+arr2Size-size1;
     int *ans = (int *)malloc(sizeof(int)*(size1+1));

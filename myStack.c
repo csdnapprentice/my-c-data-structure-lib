@@ -76,6 +76,6 @@ int myStackChangeSize(struct Stack *s, int maxSize){
  * This function returns the length of the Stack as a number.
  * The time complexity is O(1).
  */
-int myStackLength(struct Stack *s){
+int myStackLength(struct Stack const*s){
     return s->top;
 }

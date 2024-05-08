@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include "myStack.h"
 #include <string.h>
-#include <stdio.h>
 /*
  * Written by HengYuan Hu on April 26, 2024.
  * This function is used to find the maximum index that can be used in this array.
  * The time complexity depends on the length of the array, which is O(n), where n is the length of the array.
  */
-int myMaxArrIndexValidate(int *arrFlag, int size){
+int myMaxArrIndexValidate(int const * arrFlag, int size){
     int max = 0;
     for(int i=0; i<size; i++){
         if(arrFlag[i] == 1&&max<i){
@@ -39,7 +38,7 @@ int myComputePermutationNumber(int maxSize, int size){
  * Note that 'ans' is a pointer that points to a memory block.
  * Please remember to free it in the function that calls this function.
  */
-void **myGeneratePermutations(int maxSize, int size, void *arr, int elementSize, int *returnSize){
+void **myGeneratePermutations(int maxSize, int size, void const *arr, size_t elementSize, int *returnSize){
     int ansSize = myComputePermutationNumber(maxSize, size);
     *returnSize = ansSize;
     if(ansSize == 0||size == 0){
@@ -123,7 +122,7 @@ int myComputeCombinationNumber(int maxSize, int size){
  * This function can generate combinations according to the given array.
  * The time complexity depends on the length of array, which is O(n), where n is the length of the array.
  */
-void **myGenerateCombinations(int maxSize, int size, void *arr, int elementSize, int *returnSize){
+void **myGenerateCombinations(int maxSize, int size, void const *arr, size_t elementSize, int *returnSize){
     int ansSize = myComputeCombinationNumber(maxSize, size);
     *returnSize = ansSize;
     if(ansSize == 0||size == 0){

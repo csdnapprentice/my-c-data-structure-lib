@@ -1,5 +1,7 @@
 #ifndef MYQUEUE_H
 #define MYQUEUE_H
+#include <stddef.h>
+
 struct Queue{
     void ** item;
     int front;
@@ -7,11 +9,11 @@ struct Queue{
     int maxSize;
 };
 void *myDeQueue(struct Queue *q);
-int myEnQueue(struct Queue *q, void *i, int elementSize, int copy);
-void myQumeueClear(struct Queue *q, int copy);
+int myEnQueue(struct Queue *q, void *i, size_t elementSize, int copy);
+void myQueueClear(struct Queue *q, int copy);
 int myQueueInit(struct Queue *q, int maxSize);
 int myQueueChangeSize(struct Queue *q, int maxSize);
-int myQueueLength(struct Queue *q);
-int myQueueEmpty(struct Queue *q);
-int myQueueFull(struct Queue *q);
+int myQueueLength(struct Queue const *q);
+int myQueueEmpty(struct Queue const* q);
+int myQueueFull(struct Queue const* q);
 #endif //MYQUEUE_H

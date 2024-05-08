@@ -39,7 +39,7 @@ int initArray(struct Array *a, int maxSize){
  * the element will be inserted at the tail of the array.
  * the time complexity is O(n), that n is the length of the array.
  */
-int insertItem(struct Array *a, int index, void* element, int elementSize){
+int insertItem(struct Array *a, int index, void const * element, size_t elementSize){
     if(index<0) {
         index = 0;
     }
