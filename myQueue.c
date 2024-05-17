@@ -20,7 +20,7 @@ int myEnQueue(struct Queue *q, void *i, size_t elementSize, int copy) {
         return 0;
     }
     if(copy) {
-        void * item = (void *)malloc(elementSize);
+        void * item = malloc(elementSize);
         memcpy(item, i, elementSize);
         q->item[q->rear] = item;
     }else {

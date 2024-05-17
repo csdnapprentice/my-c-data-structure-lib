@@ -48,11 +48,11 @@ int insertItem(struct Array *a, int index, void const * element, size_t elementS
             for(int i=a->length; i>index; i--) {
                 a->item[i] = a->item[i-1];
             }
-            void * a_element = (void *)malloc(elementSize);
+            void * a_element = malloc(elementSize);
             memcpy(a_element, element, elementSize);
             a->item[index] = a_element;
         }else {
-            void * a_element = (void *)malloc(elementSize);
+            void * a_element = malloc(elementSize);
             memcpy(a_element, element, elementSize);
             a->item[a->length] = a_element;
         }

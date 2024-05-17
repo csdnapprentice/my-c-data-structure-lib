@@ -44,7 +44,7 @@ void myStackClear(struct Stack *s){
  * this function is used to init a stack.
  */
 void myStackInit(struct  Stack *s, int maxSize){
-    s->item = (void *)malloc(sizeof(void *)*maxSize);
+    s->item = malloc(sizeof(void *)*maxSize);
     for(int i=0; i<maxSize; i++){
         s->item[i] = NULL;
     }

@@ -15,7 +15,7 @@ void* myInOrderTraversal(struct TreeNode const * root, int* returnSize, size_t e
         void* right = myInOrderTraversal(root->right, returnSize, elementSize);
         int rightLength = *returnSize;
         int num = leftLength + rightLength;
-        void* answer = (void *)malloc(elementSize*(num+1));
+        void* answer = malloc(elementSize*(num+1));
         int k = 0;
         for (int i = 0; i < leftLength; i++) {
             memcpy(answer + k*elementSize, left + i*elementSize, elementSize);
@@ -51,7 +51,7 @@ void* myPreOrderTraversal(struct TreeNode* root, int* returnSize, size_t element
         void* right = myInOrderTraversal(root->right, returnSize, elementSize);
         int rightLength = *returnSize;
         int num = leftLength + rightLength;
-        void* answer = (void *)malloc(elementSize*(num+1));
+        void* answer = malloc(elementSize*(num+1));
         int k = 0;
         memcpy(answer + k*elementSize, root->val, elementSize);
         k++;
@@ -85,7 +85,7 @@ void* myPostOrderTraversal(struct TreeNode* root, int* returnSize, size_t elemen
         void* right = myInOrderTraversal(root->right, returnSize, elementSize);
         int rightLength = *returnSize;
         int num = leftLength + rightLength;
-        void* answer = (void *)malloc(elementSize*(num+1));
+        void* answer = malloc(elementSize*(num+1));
         int k = 0;
         for (int i = 0; i < leftLength; i++) {
             memcpy(answer + k*elementSize, left + i*elementSize, elementSize);
@@ -112,7 +112,7 @@ void* myPostOrderTraversal(struct TreeNode* root, int* returnSize, size_t elemen
  * This function can let you init a binary tree very easy.
  */
 int initBinaryTreeByArray(struct TreeNode* root, struct Array const *array, size_t elementSize){
-    root->val = (void *)malloc(elementSize);
+    root->val = malloc(elementSize);
     if(root->val == NULL) {
         return 0;
     }
@@ -130,7 +130,7 @@ int initBinaryTreeByArray(struct TreeNode* root, struct Array const *array, size
             if(currentRoot->left == NULL) {
                 return 0;
             }
-            currentRoot->left->val = (void *)malloc(elementSize);
+            currentRoot->left->val = malloc(elementSize);
             if(currentRoot->left->val == NULL) {
                 return 0;
             }
@@ -148,7 +148,7 @@ int initBinaryTreeByArray(struct TreeNode* root, struct Array const *array, size
                 if(currentRoot->right == NULL) {
                     return 0;
                 }
-                currentRoot->right->val = (void *)malloc(elementSize);
+                currentRoot->right->val = malloc(elementSize);
                 if(currentRoot->right->val == NULL) {
                     return 0;
                 }

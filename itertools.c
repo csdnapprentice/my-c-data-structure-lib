@@ -46,7 +46,7 @@ void **myGeneratePermutations(int maxSize, int size, void const *arr, size_t ele
     }
     void **ans = (void **)malloc(sizeof(void *)*ansSize);
     for(int i=0; i<ansSize; i++){
-        ans[i] = (void *)malloc(elementSize*size);
+        ans[i] = malloc(elementSize*size);
     }
     int *arrFlag = (int *)malloc(sizeof(int)*maxSize);
     for(int i=0; i<maxSize; i++){
@@ -130,7 +130,7 @@ void **myGenerateCombinations(int maxSize, int size, void const *arr, size_t ele
     }
     void **ans = (void **)malloc(sizeof(void *)*ansSize);
     for(int i=0; i<ansSize; i++){
-        ans[i] = (void *)malloc(elementSize*size);
+        ans[i] = malloc(elementSize*size);
     }
     int *arrFlag = (int *)malloc(sizeof(int)*maxSize);
     for(int i=0; i<maxSize; i++){
